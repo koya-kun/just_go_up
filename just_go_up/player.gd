@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 func collect():
 	squish_timer = squish_time
 	var sack = sand_sack_scene.instantiate()
-	get_parent().speed_multiplier -= 0.15
+	get_parent().speed_multiplier -= 0.18
 	weights.append(sack)
 #aa	sack.position = Vector2(30, 30)
 	add_child(sack)
