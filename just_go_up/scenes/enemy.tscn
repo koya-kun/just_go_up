@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlfyks4wg1ct7"]
+
+[ext_resource type="Script" uid="uid://cepf1j04obx2e" path="res://scenes/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://yxcdyxjhwqfo" path="res://art/dragon.png" id="2_md0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
+radius = 18.0
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ra3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_md0e3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

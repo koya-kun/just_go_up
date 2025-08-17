@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbibm6fv4xlkd"]
+[gd_scene load_steps=4 format=3 uid="uid://cbibm6fv4xlkd"]
 
 [ext_resource type="Script" uid="uid://d35hmw7fnb47p" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://bdhp32tsva2ux" path="res://art/ballon.png" id="2_onrkg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(41, 36)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 19.0
+height = 56.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -18.0
-offset_right = 20.0
-offset_bottom = 18.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_onrkg")
+shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_onrkg")
