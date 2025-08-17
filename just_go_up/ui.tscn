@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccu62l83axavr"]
+
+[ext_resource type="FontFile" uid="uid://cavohvombefvu" path="res://minecraft_font.ttf" id="1_m6e0p"]
+[ext_resource type="Texture2D" uid="uid://caaevsbl77mt3" path="res://art/background2.jpg" id="2_27fn8"]
+
+[sub_resource type="Theme" id="Theme_nltto"]
+default_font = ExtResource("1_m6e0p")
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 15.0
+theme = SubResource("Theme_nltto")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(200, 323)
+scale = Vector2(1.25625, 1.00625)
+texture = ExtResource("2_27fn8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(314.428, 0.993795)
+texture = ExtResource("2_27fn8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(310.448, 0)
+texture = ExtResource("2_27fn8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 264.0
+offset_right = 870.0
+offset_bottom = 356.0
+
+[node name="start" type="Button" parent="VBoxContainer"]
+modulate = Color(0.537255, 0.847059, 1, 1)
+self_modulate = Color(0.576471, 0.745098, 1, 1)
+layout_mode = 2
+text = "start"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "quit"
