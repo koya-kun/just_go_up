@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 		weight.global_position = global_position
 		weight.position.x += weight_place_offset - 30
 		weight_place_offset += 15
-ssss
+
 
 func collect():
 	var sack = sand_sack_scene.instantiate()
