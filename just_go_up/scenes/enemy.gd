@@ -37,5 +37,5 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body == get_tree().root.get_child(0).player_ref:
+	if body == get_tree().root.get_child(0).get_child(0).player_ref:
 		get_parent().game_over = true
