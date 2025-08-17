@@ -39,6 +39,6 @@ func _process(delta: float) -> void:
 		death_anim_timer -= delta
 		player_ref.velocity.y = float(300)
 		player_ref.get_child(1).flip_v = true
-		player_ref.get_child(1).modulate = Color(223, 31, 126)
+#		player_ref.get_child(1).modulate = Color(223, 31, 126)
 		if death_anim_timer <= 0:
 			get_parent().start_title()
