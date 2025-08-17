@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0hg4b50wt0p"]
+
+[ext_resource type="Texture2D" uid="uid://caaevsbl77mt3" path="res://art/background2.jpg" id="1_07rix"]
+[ext_resource type="Texture2D" uid="uid://5jhn7fdd6wf6" path="res://art/wolken.png" id="2_6wet6"]
+
+[node name="parallax" type="Node2D"]
+texture_repeat = 2
+
+[node name="skyy" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(0, 600)
+autoscroll = Vector2(0, 80)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="skyy"]
+position = Vector2(200, 323)
+scale = Vector2(1.25625, 1.00625)
+texture = ExtResource("1_07rix")
+
+[node name="Sprite2D" type="Sprite2D" parent="skyy/Sprite2D"]
+position = Vector2(314.428, 0.993795)
+texture = ExtResource("1_07rix")
+
+[node name="Sprite2D" type="Sprite2D" parent="skyy/Sprite2D/Sprite2D"]
+position = Vector2(310.448, 0)
+texture = ExtResource("1_07rix")
+
+[node name="cloud" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 800)
+autoscroll = Vector2(0, 90)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud"]
+position = Vector2(370.25, 468.5)
+scale = Vector2(2.42344, 1.44219)
+texture = ExtResource("2_6wet6")
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud/Sprite2D"]
+position = Vector2(229.323, -178.548)
+scale = Vector2(0.915088, 1.03884)
+texture = ExtResource("2_6wet6")
