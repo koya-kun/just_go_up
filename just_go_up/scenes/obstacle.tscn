@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://c2yij0gw6cxc8" path="res://scenes/obstacle.gd" id="1_7ukg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdry"]
+size = Vector2(193.055, 58)
 
 [node name="Obstacle" type="Area2D"]
 script = ExtResource("1_7ukg5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(59.5, 17)
+scale = Vector2(0.720001, 1)
 shape = SubResource("RectangleShape2D_drdry")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -15,7 +18,7 @@ offset_left = -11.0
 offset_top = -13.0
 offset_right = 29.0
 offset_bottom = 27.0
-scale = Vector2(0.538525, 0.626366)
+scale = Vector2(3.56055, 1.50912)
 color = Color(1, 0.054902, 1, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,28 +1,69 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5jksa3ymvyko"]
+[gd_scene load_steps=10 format=3 uid="uid://c5jksa3ymvyko"]
 
 [ext_resource type="PackedScene" uid="uid://cbibm6fv4xlkd" path="res://player.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://d4cwnwgwrtpll" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://b4g03mycued0f" path="res://sand_sack.tscn" id="2_2c62f"]
 [ext_resource type="PackedScene" uid="uid://ck7majgnrcqa6" path="res://scenes/obstacle.tscn" id="2_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://csohu7hb18ijf" path="res://sack_collect.tscn" id="2_d5x1h"]
-[ext_resource type="Texture2D" uid="uid://bxlmis1b38frh" path="res://art/background.jpg" id="4_hq1ik"]
 [ext_resource type="PackedScene" uid="uid://dlfyks4wg1ct7" path="res://scenes/enemy.tscn" id="4_nfk4m"]
+[ext_resource type="Texture2D" uid="uid://caaevsbl77mt3" path="res://art/background2.jpg" id="5_66tet"]
+[ext_resource type="Texture2D" uid="uid://5jhn7fdd6wf6" path="res://art/wolken.png" id="8_7ycvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfk4m"]
+size = Vector2(121.25, 286)
 
 [node name="main_scene" type="Node2D"]
 script = ExtResource("1_gyfs4")
-obstacles = Array[PackedScene]([ExtResource("2_8mm7a"), ExtResource("2_d5x1h")])
+obstacles = Array[PackedScene]([ExtResource("2_8mm7a"), ExtResource("2_d5x1h"), ExtResource("2_8mm7a")])
 enemy_scene = ExtResource("4_nfk4m")
 
-[node name="bg" type="Sprite2D" parent="."]
-position = Vector2(318, 310)
-scale = Vector2(2, 2)
-texture = ExtResource("4_hq1ik")
+[node name="skyy" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(0, 600)
+autoscroll = Vector2(0, 80)
+repeat_times = 50
 
-[node name="bg2" type="Sprite2D" parent="."]
-position = Vector2(951, 308)
-scale = Vector2(2, 2)
-texture = ExtResource("4_hq1ik")
+[node name="Sprite2D" type="Sprite2D" parent="skyy"]
+position = Vector2(200, 323)
+scale = Vector2(1.25625, 1.00625)
+texture = ExtResource("5_66tet")
+
+[node name="Sprite2D" type="Sprite2D" parent="skyy/Sprite2D"]
+position = Vector2(314.428, 0.993795)
+texture = ExtResource("5_66tet")
+
+[node name="Sprite2D" type="Sprite2D" parent="skyy/Sprite2D/Sprite2D"]
+position = Vector2(310.448, 0)
+texture = ExtResource("5_66tet")
 
 [node name="player" parent="." instance=ExtResource("1_0f027")]
 position = Vector2(541, 270)
 sand_sack_scene = ExtResource("2_2c62f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-77, 292)
+shape = SubResource("RectangleShape2D_nfk4m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1230, 306)
+shape = SubResource("RectangleShape2D_nfk4m")
+
+[node name="cloud" type="Parallax2D" parent="."]
+modulate = Color(1, 1, 1, 0.698039)
+z_index = 2
+repeat_size = Vector2(0, 800)
+autoscroll = Vector2(0, 50)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud"]
+position = Vector2(370.25, 468.5)
+scale = Vector2(2.42344, 1.44219)
+texture = ExtResource("8_7ycvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud/Sprite2D"]
+position = Vector2(229.323, -178.548)
+scale = Vector2(0.915088, 1.03884)
+texture = ExtResource("8_7ycvg")

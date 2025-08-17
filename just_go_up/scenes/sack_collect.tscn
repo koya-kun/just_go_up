@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjtwr"]
 size = Vector2(13.8346, 7.53369)
 
-[node name="sack_collect" type="Area2D"]
+[node name="sack_collect2" type="Area2D"]
 script = ExtResource("1_rg3xt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
