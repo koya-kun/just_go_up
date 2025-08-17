@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5jksa3ymvyko"]
+[gd_scene load_steps=7 format=3 uid="uid://d3ru1esnwge4x"]
 
-[ext_resource type="PackedScene" uid="uid://cbibm6fv4xlkd" path="res://player.tscn" id="1_0f027"]
-[ext_resource type="Script" uid="uid://d4cwnwgwrtpll" path="res://main_scene.gd" id="1_gyfs4"]
-[ext_resource type="PackedScene" uid="uid://b4g03mycued0f" path="res://sand_sack.tscn" id="2_2c62f"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="1_0f027"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_gyfs4"]
+[ext_resource type="PackedScene" path="res://sand_sack.tscn" id="2_2c62f"]
 [ext_resource type="PackedScene" uid="uid://ck7majgnrcqa6" path="res://scenes/obstacle.tscn" id="2_8mm7a"]
-[ext_resource type="PackedScene" uid="uid://csohu7hb18ijf" path="res://sack_collect.tscn" id="2_d5x1h"]
+[ext_resource type="PackedScene" path="res://sack_collect.tscn" id="2_d5x1h"]
+[ext_resource type="AudioStream" uid="uid://cg4wc1yy57kwj" path="res://quick-orchestral-rise-loop-140bpm-132264.mp3" id="6_hq1ik"]
 
 [node name="main_scene" type="Node2D"]
 script = ExtResource("1_gyfs4")
@@ -13,3 +14,8 @@ obstacles = Array[PackedScene]([ExtResource("2_8mm7a"), ExtResource("2_d5x1h")])
 [node name="player" parent="." instance=ExtResource("1_0f027")]
 position = Vector2(577, 294)
 sand_sack_scene = ExtResource("2_2c62f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hq1ik")
+volume_db = 1.095
+autoplay = true
