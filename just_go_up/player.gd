@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed: float = 300
+var speed: float = 250
 var weights: Array 
 var weight_place_offset: float = 0
 var hover_time: float = 0.7
@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("drop"):
 		if weights.size() > 0:
 			get_parent().speed_multiplier += 0.2
-			weights[0].position.x += 25
+			speed *= get_parent().speed_multiplier
 			weights[0].loose = true
 			weights.pop_front()
 	weight_place_offset = 0
@@ -66,10 +66,9 @@ func _process(delta: float) -> void:
 
 
 func collect():
-	squish_timer = squish_time
 	var sack = sand_sack_scene.instantiate()
 	get_parent().speed_multiplier -= 0.18
 	weights.append(sack)
-#aa	sack.position = Vector2(30, 30)
+	sack.position = Vector2(30, 30)
 	add_child(sack)
 		
