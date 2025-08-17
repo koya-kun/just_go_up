@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 
 func collect():
 	var sack = sand_sack_scene.instantiate()
-	get_parent().speed_multiplier -= 0.15
+	get_parent().speed_multiplier -= 0.18
 	weights.append(sack)
 	sack.position = Vector2(30, 30)
 	add_child(sack)

@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4ejn5cgx6t8y"]
+
+[ext_resource type="Script" uid="uid://3lmv15inypbt" path="res://start_menu.gd" id="1_ctwoq"]
+[ext_resource type="Texture2D" uid="uid://caaevsbl77mt3" path="res://art/background2.jpg" id="1_v2mkm"]
+[ext_resource type="Texture2D" uid="uid://bdhp32tsva2ux" path="res://art/ballon.png" id="2_ctwoq"]
+[ext_resource type="Texture2D" uid="uid://yxcdyxjhwqfo" path="res://art/dragon.png" id="3_ppfnh"]
+[ext_resource type="Texture2D" uid="uid://5jhn7fdd6wf6" path="res://art/wolken.png" id="4_7boi2"]
+
+[node name="start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ctwoq")
+
+[node name="bg_image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = -16.0
+offset_right = 566.0
+offset_bottom = 624.0
+scale = Vector2(2.85776, 1.13368)
+texture = ExtResource("1_v2mkm")
+
+[node name="player_image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 74.0
+offset_right = 670.0
+offset_bottom = 147.0
+scale = Vector2(6.8, 6.8)
+texture = ExtResource("2_ctwoq")
+expand_mode = 3
+
+[node name="dragon_image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 493.0
+offset_right = 970.0
+offset_bottom = 533.0
+scale = Vector2(4.58099, 4.58099)
+texture = ExtResource("3_ppfnh")
+
+[node name="cloud" type="Parallax2D" parent="."]
+modulate = Color(1, 1, 1, 0.698039)
+z_index = 1
+scale = Vector2(1.41638, 1.41638)
+repeat_size = Vector2(0, 800)
+autoscroll = Vector2(0, 50)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud"]
+position = Vector2(370.25, 468.5)
+scale = Vector2(2.42344, 1.44219)
+texture = ExtResource("4_7boi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud/Sprite2D"]
+position = Vector2(229.323, -178.548)
+scale = Vector2(0.915088, 1.03884)
+texture = ExtResource("4_7boi2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 131.0
+offset_top = -499.0
+offset_right = 171.0
+offset_bottom = -459.0
+rotation = 0.53987
+scale = Vector2(19.8396, 30.8484)
+color = Color(0.407843, 1, 1, 1)
+
+[node name="start_button" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 41.0
+offset_top = 264.0
+offset_right = 137.0
+offset_bottom = 295.0
+scale = Vector2(3.84, 3.84)
+text = "Start Game"
+
+[node name="quit_button" type="Button" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 36.0
+offset_top = 410.0
+offset_right = 132.0
+offset_bottom = 441.0
+scale = Vector2(3.65103, 3.48225)
+text = "Quit :("
+
+[node name="title" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 44.0
+offset_top = 28.0
+offset_right = 125.0
+offset_bottom = 51.0
+scale = Vector2(1.2, 1.19307)
+theme_override_colors/font_color = Color(0, 0, 0.403922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.988235, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 100
+text = "Just go up!"
+
+[connection signal="button_up" from="start_button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="quit_button" to="." method="_on_quit_button_button_up"]
