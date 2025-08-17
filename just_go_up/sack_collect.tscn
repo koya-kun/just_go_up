@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://csohu7hb18ijf"]
+
+[ext_resource type="Script" uid="uid://coy2k74btfaw3" path="res://sack_collect.gd" id="1_u7i6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjtwr"]
+size = Vector2(13.8346, 7.53369)
+
+[node name="sack_collect" type="Area2D"]
+script = ExtResource("1_u7i6u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0.646885, 0.647519, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 20)
+scale = Vector2(2.8686, -5.27103)
+shape = SubResource("RectangleShape2D_bjtwr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4g03mycued0f"]
+
+[ext_resource type="Script" uid="uid://ciymib2nw4cfj" path="res://sand_sack.gd" id="1_8faag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrg5x"]
+radius = 5.0
+
+[node name="sand_sack" type="Area2D"]
+script = ExtResource("1_8faag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nrg5x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 34.0
+offset_bottom = 34.0
+scale = Vector2(0.284223, 0.4)
+color = Color(0.693045, 0.4183, 0.169127, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
