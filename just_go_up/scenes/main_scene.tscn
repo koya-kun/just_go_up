@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqf2rlphaekwx"]
+
+[ext_resource type="Script" uid="uid://d4cwnwgwrtpll" path="res://main_scene.gd" id="1_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://csohu7hb18ijf" path="res://sack_collect.tscn" id="2_gubc5"]
+[ext_resource type="PackedScene" uid="uid://cbibm6fv4xlkd" path="res://player.tscn" id="3_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://b4g03mycued0f" path="res://sand_sack.tscn" id="4_c16ls"]
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_pu3yx")
+obstacles = Array[PackedScene]([ExtResource("2_gubc5"), ExtResource("2_gubc5")])
+
+[node name="player" parent="." instance=ExtResource("3_rt2n2")]
+position = Vector2(577, 294)
+sand_sack_scene = ExtResource("4_c16ls")
