@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0mwbh0ja2syp"
-path="res://.godot/imported/luftschiff.png-5d8916b87a1714aa052d343e836f5490.ctex"
+uid="uid://ctc3nexptan2w"
+path="res://.godot/imported/ballon_better.png-38df3663d9f1ba3f8b1c8b878fb5644b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/luftschiff.png"
-dest_files=["res://.godot/imported/luftschiff.png-5d8916b87a1714aa052d343e836f5490.ctex"]
+source_file="res://art/ballon_better.png"
+dest_files=["res://.godot/imported/ballon_better.png-38df3663d9f1ba3f8b1c8b878fb5644b.ctex"]
 
 [params]
 

@@ -3,17 +3,47 @@ extends CharacterBody2D
 var speed: float = 250
 var weights: Array 
 var weight_place_offset: float = 0
+var hover_time: float = 0.7
+var hover_timer: float
+var hover_speed: float = 10
+var hover_dir: int = 1
+var squish_time: float = 0.2
+var squish_timer: float = 0
+var og_size: Vector2
+var amplitude: float = 0
 @export var sand_sack_scene: PackedScene
 
 func _ready() -> void:
-	collect()
+	rotation = PI/4
+	og_size = scale
 	collect()
 
 func _process(delta: float) -> void:
+	#swinging
+	#rotation -= delta
+	rotation -= 30 * rotation * delta
+	#hover pretty
+	hover_timer -= delta
+	if hover_timer <= 0:
+		hover_timer = hover_time
+		hover_dir *= -1
+	position.y += hover_speed * hover_dir * delta
+	# squish pretty
+	if squish_timer > 0:
+		squish_timer -= delta
+		if squish_timer >= squish_time / 2:
+			scale -= Vector2(0.07, 0.07)
+		else:
+			scale += Vector2(0.07, 0.07)
+	else:
+		scale = og_size
+	# squish pretty ende
 	velocity.x = 0
 	if Input.is_action_pressed("left"):
+		rotation = PI/8
 		velocity.x = -speed
 	if Input.is_action_pressed("right"):
+		rotation = -PI/8
 		velocity.x = speed
 	var hit = move_and_collide(velocity * delta)
 	if hit:
