@@ -10,13 +10,18 @@ var hover_dir: int = 1
 var squish_time: float = 0.2
 var squish_timer: float = 0
 var og_size: Vector2
+var amplitude: float = 0
 @export var sand_sack_scene: PackedScene
 
 func _ready() -> void:
+	rotation = PI/4
 	og_size = scale
 	collect()
 
 func _process(delta: float) -> void:
+	#swinging
+	#rotation -= delta
+	rotation -= 30 * rotation * delta
 	#hover pretty
 	hover_timer -= delta
 	if hover_timer <= 0:
@@ -35,8 +40,10 @@ func _process(delta: float) -> void:
 	# squish pretty ende
 	velocity.x = 0
 	if Input.is_action_pressed("left"):
+		rotation = PI/8
 		velocity.x = -speed
 	if Input.is_action_pressed("right"):
+		rotation = -PI/8
 		velocity.x = speed
 	var hit = move_and_collide(velocity * delta)
 	if hit:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3lmv15inypbt" path="res://start_menu.gd" id="1_ctwoq"]
 [ext_resource type="Texture2D" uid="uid://caaevsbl77mt3" path="res://art/background2.jpg" id="1_v2mkm"]
-[ext_resource type="Texture2D" uid="uid://bdhp32tsva2ux" path="res://art/ballon.png" id="2_ctwoq"]
+[ext_resource type="Texture2D" uid="uid://ctc3nexptan2w" path="res://art/ballon_better.png" id="3_ctwoq"]
 [ext_resource type="Texture2D" uid="uid://yxcdyxjhwqfo" path="res://art/dragon.png" id="3_ppfnh"]
 [ext_resource type="Texture2D" uid="uid://5jhn7fdd6wf6" path="res://art/wolken.png" id="4_7boi2"]
 
@@ -31,7 +31,7 @@ offset_top = 74.0
 offset_right = 670.0
 offset_bottom = 147.0
 scale = Vector2(6.8, 6.8)
-texture = ExtResource("2_ctwoq")
+texture = ExtResource("3_ctwoq")
 expand_mode = 3
 
 [node name="dragon_image" type="TextureRect" parent="."]
@@ -80,6 +80,12 @@ offset_top = 264.0
 offset_right = 137.0
 offset_bottom = 295.0
 scale = Vector2(3.84, 3.84)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0.603922, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0.603922, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0.603922, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0.603922, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0.603922, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0.603922, 1)
 text = "Start Game"
 
 [node name="quit_button" type="Button" parent="."]
