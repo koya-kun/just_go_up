@@ -1,15 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5jksa3ymvyko"]
+[gd_scene load_steps=8 format=3 uid="uid://c5jksa3ymvyko"]
 
 [ext_resource type="PackedScene" uid="uid://cbibm6fv4xlkd" path="res://player.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://d4cwnwgwrtpll" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://b4g03mycued0f" path="res://sand_sack.tscn" id="2_2c62f"]
 [ext_resource type="PackedScene" uid="uid://ck7majgnrcqa6" path="res://scenes/obstacle.tscn" id="2_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://csohu7hb18ijf" path="res://sack_collect.tscn" id="2_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://bxlmis1b38frh" path="res://art/background.jpg" id="4_hq1ik"]
+[ext_resource type="PackedScene" uid="uid://dlfyks4wg1ct7" path="res://scenes/enemy.tscn" id="4_nfk4m"]
 
 [node name="main_scene" type="Node2D"]
 script = ExtResource("1_gyfs4")
 obstacles = Array[PackedScene]([ExtResource("2_8mm7a"), ExtResource("2_d5x1h")])
+enemy_scene = ExtResource("4_nfk4m")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(318, 310)
+scale = Vector2(2, 2)
+texture = ExtResource("4_hq1ik")
+
+[node name="bg2" type="Sprite2D" parent="."]
+position = Vector2(951, 308)
+scale = Vector2(2, 2)
+texture = ExtResource("4_hq1ik")
 
 [node name="player" parent="." instance=ExtResource("1_0f027")]
-position = Vector2(577, 294)
+position = Vector2(541, 270)
 sand_sack_scene = ExtResource("2_2c62f")

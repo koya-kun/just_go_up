@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtpe176kcbdl2"]
+[gd_scene load_steps=4 format=3 uid="uid://cfgre8exyytun"]
 
 [ext_resource type="Script" uid="uid://ciymib2nw4cfj" path="res://sand_sack.gd" id="1_ax26a"]
+[ext_resource type="Texture2D" uid="uid://c3gwatj5lbpdv" path="res://art/bag.png" id="2_8hwbo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nrg5x"]
 radius = 5.0
@@ -11,13 +12,7 @@ script = ExtResource("1_ax26a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nrg5x")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 2
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 34.0
-offset_bottom = 34.0
-scale = Vector2(0.284223, 0.4)
-color = Color(0.693045, 0.4183, 0.169127, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8hwbo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
